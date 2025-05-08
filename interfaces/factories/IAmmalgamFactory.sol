@@ -15,6 +15,26 @@ interface IAmmalgamFactory {
     event PairCreated(address indexed tokenX, address indexed tokenY, address pair, uint256 allPairsLength);
 
     /**
+     * @notice Emitted when new lending tokens are created.
+     * @param pair The address of the pair.
+     * @param depositL The address of the `DEPOSIT_L` lending token.
+     * @param depositX The address of the `DEPOSIT_X` lending token.
+     * @param depositY The address of the `DEPOSIT_Y` lending token.
+     * @param borrowL The address of the `BORROW_L` lending token.
+     * @param borrowX The address of the `BORROW_X` lending token.
+     * @param borrowY The address of the `BORROW_Y` lending token.
+     */
+    event LendingTokensCreated(
+        address indexed pair,
+        address depositL,
+        address depositX,
+        address depositY,
+        address borrowL,
+        address borrowX,
+        address borrowY
+    );
+
+    /**
      * @notice Returns the fee recipient address.
      * @return The address of the fee recipient.
      */

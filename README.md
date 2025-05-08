@@ -7,8 +7,8 @@ Latest `core-v1` and `peripheral` contract deployed addresses, ABIs and interfac
 
 | Name                            | Address                                                                                      | Interface |
 |---------------------------------|--------------------------------------------------------------------------------------------| ------------- |
-| Ammalgam Factory               | [`0xBd68dbE675d0d1108af3aEbC5F7724Cf31c82E9a`](https://sepolia.etherscan.io/address/0xBd68dbE675d0d1108af3aEbC5F7724Cf31c82E9a) | [IAmmalgamFactory](./interfaces/factories/IAmmalgamFactory.sol)
-| Ammalgam Peripheral            | [`0x65dfBe3f4ebaEE887D0188fB42c674Cf6087b0FE`](https://sepolia.etherscan.io/address/0x65dfBe3f4ebaEE887D0188fB42c674Cf6087b0FE) | [IPeripheral](./interfaces/IPeripheral.sol)
+| Ammalgam Factory               | [`0xda528b5e8B9F2cA274bEC5837D32674E184833A2`](https://sepolia.etherscan.io/address/0xda528b5e8B9F2cA274bEC5837D32674E184833A2) | [IAmmalgamFactory](./interfaces/factories/IAmmalgamFactory.sol)
+| Ammalgam Peripheral            | [`0x737Da85F70db0d93b9d2C189AA7fba0841b8463B`](https://sepolia.etherscan.io/address/0x737Da85F70db0d93b9d2C189AA7fba0841b8463B) | [IPeripheral](./interfaces/IPeripheral.sol)
 
 This repo contains the `interfaces` for the `core-v1` contracts of the Ammalgam Protocol. We will be exposing more once we have completed audits and are closer to launching.
 

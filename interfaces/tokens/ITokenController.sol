@@ -35,6 +35,30 @@ interface ITokenController {
     event UpdateExternalLiquidity(uint112 externalLiquidity);
 
     /**
+     * @dev Emitted when `lendingStateTick` is updated in `GeometricTWAP` library
+     * @param lendingStateTick The updated value for lending state tick
+     */
+    event UpdateLendingTick(int16 lendingStateTick);
+
+    /**
+     * @dev Emitted when Interest gets accrued
+     * @param depositLAssets The amount of total `DEPOSIT_L` assets in the pool after interest accrual
+     * @param depositXAssets The amount of total `DEPOSIT_X` assets in the pool after interest accrual
+     * @param depositYAssets The amount of total `DEPOSIT_Y` assets in the pool after interest accrual
+     * @param borrowLAssets The amount of total `BORROW_L` assets in the pool after interest accrual
+     * @param borrowXAssets The amount of total `BORROW_X` assets in the pool after interest accrual
+     * @param borrowYAssets The amount of total `BORROW_Y` assets in the pool after interest accrual
+     */
+    event InterestAccrued(
+        uint128 depositLAssets,
+        uint128 depositXAssets,
+        uint128 depositYAssets,
+        uint128 borrowLAssets,
+        uint128 borrowXAssets,
+        uint128 borrowYAssets
+    );
+
+    /**
      * @notice Get the underlying tokens for the AmmalgamERC20Controller.
      * @return The addresses of the underlying tokens.
      */

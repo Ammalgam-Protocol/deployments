@@ -495,11 +495,6 @@
   },
   {
     "type": "error",
-    "name": "InsufficientLiquidity",
-    "inputs": []
-  },
-  {
-    "type": "error",
     "name": "InsufficientLiquidityBurned",
     "inputs": []
   },

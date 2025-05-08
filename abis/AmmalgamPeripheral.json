@@ -6,9 +6,18 @@
         "name": "_factory",
         "type": "address",
         "internalType": "address"
+      },
+      {
+        "name": "_wrappedNativeToken",
+        "type": "address",
+        "internalType": "address"
       }
     ],
     "stateMutability": "nonpayable"
+  },
+  {
+    "type": "fallback",
+    "stateMutability": "payable"
   },
   {
     "type": "function",
@@ -379,7 +388,77 @@
   },
   {
     "type": "function",
+    "name": "repayFullHelper",
+    "inputs": [
+      {
+        "name": "helperParams",
+        "type": "tuple",
+        "internalType": "struct IPeripheral.HelperParams",
+        "components": [
+          {
+            "name": "to",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "pairAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "amountX",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "amountY",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "repayHelper",
+    "inputs": [
+      {
+        "name": "helperParams",
+        "type": "tuple",
+        "internalType": "struct IPeripheral.HelperParams",
+        "components": [
+          {
+            "name": "to",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "pairAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "amountX",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "amountY",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "repayLiquidityFullHelper",
     "inputs": [
       {
         "name": "helperParams",
@@ -477,7 +556,7 @@
   },
   {
     "type": "function",
-    "name": "swapHelper",
+    "name": "swapFromNative",
     "inputs": [
       {
         "name": "params",
@@ -514,6 +593,86 @@
     ],
     "outputs": [],
     "stateMutability": "payable"
+  },
+  {
+    "type": "function",
+    "name": "swapHelper",
+    "inputs": [
+      {
+        "name": "params",
+        "type": "tuple",
+        "internalType": "struct IPeripheral.SwapSingleParams",
+        "components": [
+          {
+            "name": "to",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tokenIn",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tokenOut",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "amountIn",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "minAmountOut",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "swapToNative",
+    "inputs": [
+      {
+        "name": "params",
+        "type": "tuple",
+        "internalType": "struct IPeripheral.SwapSingleParams",
+        "components": [
+          {
+            "name": "to",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tokenIn",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "tokenOut",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "amountIn",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "minAmountOut",
+            "type": "uint256",
+            "internalType": "uint256"
+          }
+        ]
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
     "type": "function",
@@ -575,6 +734,21 @@
   },
   {
     "type": "error",
+    "name": "InvalidNativeSwap",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidPair",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidSender",
+    "inputs": []
+  },
+  {
+    "type": "error",
     "name": "InvalidSwap",
     "inputs": [
       {
@@ -623,6 +797,11 @@
   {
     "type": "error",
     "name": "UnauthorizedDelegation",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "UnwrapFailed",
     "inputs": []
   }
 ]

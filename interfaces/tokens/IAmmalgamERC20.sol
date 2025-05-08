@@ -13,24 +13,26 @@ interface IAmmalgamERC20 is IERC20, IERC20Metadata, IERC20Permit {
     /**
      * @dev Emitted when tokens are minted
      * @param to Address where minted tokens are sent
-     * @param shares The amount of tokens being minted
+     * @param assets The amount of token assets being minted
+     * @param shares The amount of token shares being minted
      */
-    event Mint(address indexed sender, address indexed to, uint256 shares);
+    event Mint(address indexed sender, address indexed to, uint256 assets, uint256 shares);
 
     /**
      * @dev Emitted when tokens are burned
      * @param sender Supplies Ammalgam Liquidity token into the pair contract and receives the minted assets in exchange
      * @param to Address where burned tokens are sent
-     * @param shares The amount of tokens being burned
+     * @param assets The amount of token assets being burned
+     * @param shares The amount of token shares being burned
      */
-    event Burn(address indexed sender, address indexed to, uint256 shares);
+    event Burn(address indexed sender, address indexed to, uint256 assets, uint256 shares);
 
     /**
      * @dev Emitted on a borrow of tokens
      * @param sender The address initiating the borrowing action
      * @param to The address receiving the borrowed tokens
-     * @param assets The address of the borrowed token
-     * @param shares The amount of tokens being borrowed
+     * @param assets The amount of the borrowed token assets
+     * @param shares The amount of token shares being borrowed
      */
     event Borrow(address indexed sender, address indexed to, uint256 assets, uint256 shares);
 
@@ -46,18 +48,20 @@ interface IAmmalgamERC20 is IERC20, IERC20Metadata, IERC20Permit {
     /**
      * @dev Emitted on a liquidity borrow
      * @param sender The address initiating the borrowing action
-     * @param borrowAmountLShares The amount of liquidity borrowed
      * @param to Address where the borrowed liquidity is sent
+     * @param assets The amount of the borrowed liquidity token
+     * @param shares The amount of token shares being borrowed
      */
-    event BorrowLiquidity(address indexed sender, uint256 borrowAmountLShares, address indexed to);
+    event BorrowLiquidity(address indexed sender, address indexed to, uint256 assets, uint256 shares);
 
     /**
      * @dev Emitted on a liquidity repayment
      * @param sender Supplies borrowed liquidity into the pair contract and the corresponding Ammalgam Debt tokens will be destroyed
      * @param onBehalfOf Address for whom the repayment is made
-     * @param repayAmountLShares The amount of liquidity being repaid
+     * @param assets The amount of liquidity assets being repaid
+     * @param shares The amount of liquidity shares being repaid
      */
-    event RepayLiquidity(address indexed sender, address indexed onBehalfOf, uint256 repayAmountLShares);
+    event RepayLiquidity(address indexed sender, address indexed onBehalfOf, uint256 assets, uint256 shares);
 
     /**
      * @notice Creates `amount` tokens and assigns them to `to` address, increasing the total supply.

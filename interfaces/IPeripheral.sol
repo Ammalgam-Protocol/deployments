@@ -50,7 +50,15 @@ interface IPeripheral {
 
     function swapHelper(
         SwapSingleParams calldata params
+    ) external;
+
+    function swapFromNative(
+        SwapSingleParams calldata params
     ) external payable;
+
+    function swapToNative(
+        SwapSingleParams calldata params
+    ) external;
 
     function createPair(
         address tokenX,
